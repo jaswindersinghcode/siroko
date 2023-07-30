@@ -1,0 +1,102 @@
+<?php //%255BEmn%255CCodeChallenge%255CDomain%255CModel%255COffersPlatformsL%255COffersPlatformsL%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\AssignedGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\AssignedGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'Emn\\CodeChallenge\\Domain\\Model\\OffersPlatformsL\\OffersPlatformsL',
+            ],
+            'namespace' => [
+                'Emn\\CodeChallenge\\Domain\\Model\\OffersPlatformsL',
+            ],
+            'rootEntityName' => [
+                'Emn\\CodeChallenge\\Domain\\Model\\OffersPlatformsL\\OffersPlatformsL',
+            ],
+            'identifier' => [
+                [
+                    'refOffer',
+                ],
+            ],
+            'fieldMappings' => [
+                [
+                    'refPlatform' => [
+                        'fieldName' => 'refPlatform',
+                        'type' => 'integer',
+                        'columnName' => 'ref_platform',
+                        'length' => 11,
+                        'nullable' => false,
+                    ],
+                    'featured' => [
+                        'fieldName' => 'featured',
+                        'type' => 'integer',
+                        'columnName' => 'featured',
+                        'length' => 11,
+                        'nullable' => true,
+                    ],
+                    'favorite' => [
+                        'fieldName' => 'favorite',
+                        'type' => 'integer',
+                        'columnName' => 'favorite',
+                        'length' => 11,
+                        'nullable' => true,
+                    ],
+                    'mandatory' => [
+                        'fieldName' => 'mandatory',
+                        'type' => 'integer',
+                        'columnName' => 'mandatory',
+                        'length' => 11,
+                        'nullable' => true,
+                    ],
+                    'webCustomOrder' => [
+                        'fieldName' => 'webCustomOrder',
+                        'type' => 'integer',
+                        'columnName' => 'web_custom_order',
+                        'length' => 11,
+                        'nullable' => true,
+                    ],
+                    'refOffer' => [
+                        'id' => true,
+                        'fieldName' => 'refOffer',
+                        'type' => 'integer',
+                        'columnName' => 'ref_offer',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'ref_platform' => 'refPlatform',
+                    'featured' => 'featured',
+                    'favorite' => 'favorite',
+                    'mandatory' => 'mandatory',
+                    'web_custom_order' => 'webCustomOrder',
+                    'ref_offer' => 'refOffer',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'refPlatform' => 'ref_platform',
+                    'featured' => 'featured',
+                    'favorite' => 'favorite',
+                    'mandatory' => 'mandatory',
+                    'webCustomOrder' => 'web_custom_order',
+                    'refOffer' => 'ref_offer',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'offers_platforms_l',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

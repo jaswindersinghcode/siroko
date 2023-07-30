@@ -1,0 +1,101 @@
+<?php //%255BEmn%255CCodeChallenge%255CDomain%255CModel%255COffersCategoriesL%255COffersCategoriesL%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\AssignedGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\AssignedGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'Emn\\CodeChallenge\\Domain\\Model\\OffersCategoriesL\\OffersCategoriesL',
+            ],
+            'namespace' => [
+                'Emn\\CodeChallenge\\Domain\\Model\\OffersCategoriesL',
+            ],
+            'rootEntityName' => [
+                'Emn\\CodeChallenge\\Domain\\Model\\OffersCategoriesL\\OffersCategoriesL',
+            ],
+            'identifier' => [
+                [
+                    'refOffer',
+                ],
+            ],
+            'fieldMappings' => [
+                [
+                    'refCategory' => [
+                        'fieldName' => 'refCategory',
+                        'type' => 'integer',
+                        'columnName' => 'ref_category',
+                        'length' => 11,
+                        'nullable' => false,
+                    ],
+                    'featured' => [
+                        'fieldName' => 'featured',
+                        'type' => 'string',
+                        'columnName' => 'destacada',
+                        'nullable' => false,
+                    ],
+                    'favoriteOffer' => [
+                        'fieldName' => 'favoriteOffer',
+                        'type' => 'integer',
+                        'columnName' => 'favorite_offer',
+                        'length' => 4,
+                        'nullable' => false,
+                    ],
+                    'featuredOffer' => [
+                        'fieldName' => 'featuredOffer',
+                        'type' => 'integer',
+                        'columnName' => 'featured_offer',
+                        'length' => 4,
+                        'nullable' => false,
+                    ],
+                    'keyword' => [
+                        'fieldName' => 'keyword',
+                        'type' => 'string',
+                        'columnName' => 'keyword',
+                        'length' => 45,
+                        'nullable' => true,
+                    ],
+                    'refOffer' => [
+                        'id' => true,
+                        'fieldName' => 'refOffer',
+                        'type' => 'integer',
+                        'columnName' => 'ref_offer',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'ref_category' => 'refCategory',
+                    'destacada' => 'featured',
+                    'favorite_offer' => 'favoriteOffer',
+                    'featured_offer' => 'featuredOffer',
+                    'keyword' => 'keyword',
+                    'ref_offer' => 'refOffer',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'refCategory' => 'ref_category',
+                    'featured' => 'destacada',
+                    'favoriteOffer' => 'favorite_offer',
+                    'featuredOffer' => 'featured_offer',
+                    'keyword' => 'keyword',
+                    'refOffer' => 'ref_offer',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'offers_categories_l',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
