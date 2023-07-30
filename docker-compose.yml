@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    container_name: unit-testing-api-mysql
+    container_name: siroko-mysql
     build:
       context: etc/dev/mysql
     volumes:
@@ -14,9 +14,9 @@ services:
       MYSQL_PASSWORD: root
       MYSQL_ROOT_HOST: '%'
     ports:
-      - "3314:3306"
+      - "3315:3306"
   php:
-    container_name: unit-testing-api-app
+    container_name: siroko-app
     build:
       context: etc/dev/php8-fpm
     volumes:
@@ -24,10 +24,10 @@ services:
       - ./logs:/var/logs
 
   nginx:
-    container_name: unit-testing-api-nginx
+    container_name: siroko-nginx
     build:
       context: etc/dev/nginx
     ports:
-      - "2137:80"
+      - "2138:80"
     volumes:
       - ./logs/nginx/:/var/log/nginx

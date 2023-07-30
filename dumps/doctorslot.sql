@@ -19,29 +19,29 @@
 -- Current Database: `CodeChallenge`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `CodeChallenge` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `Siroko` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `CodeChallenge`;
+USE `Siroko`;
 
 --
--- Table structure for table `doctor`
+-- Table structure for table `product`
 --
-DROP TABLE IF EXISTS `doctor`;
+DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `doctor` (
-                        `id` varchar(64) NOT NULL,
-                        `name` varchar(300) NOT NULL,
-                        `error` varchar(300) NOT NULL
+CREATE TABLE `product` (
+                           `id` INT AUTO_INCREMENT PRIMARY KEY,
+                           `name` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `slot`;
+--
+-- Table structure for table `product`
+--
+DROP TABLE IF EXISTS `purchase`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `slot` (
-                          `id` INT,
-                          `doctor_id` Int,
-                          `start` varchar(300) NOT NULL,
-                          `end` varchar(300) NOT NULL,
-                          `created_at` varchar(300) NOT NULL
+CREATE TABLE `purchase` (
+                            `id` INT AUTO_INCREMENT PRIMARY KEY,
+                            `items` varchar(300) NOT NULL,
+                            `created` datetime
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
