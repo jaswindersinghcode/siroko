@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-class ShoppingCartController extends BaseController
+class CartController extends BaseController
 {
     private SearchProduct $searchProduct;
     private CartService $cartService;
@@ -32,18 +32,22 @@ class ShoppingCartController extends BaseController
 
     public function delete(Request $request, SessionInterface $session): JsonResponse
     {
-        return $this->handleCartAction($request, $session, 'removeProduct');
+        return $this->handleCartAction($request, $session, 'deleteProduct');
     }
 
     public function confirmPurchase(Request $request, SessionInterface $session): JsonResponse
     {
-        $cart = $this->getOrCreateCart($session);
-        $this->cartService->save($cart);
+        $cartAggregate = $this->getOrCreateCart($session);
+        $this->cartService->save($cartAggregate);
+        $savedCart = $this->cartService->getCartByShoppingCartId($cartAggregate->id());
+        $cartItems = [];
+        foreach ($savedCart as $savedCartItem) {
+            $cartItems[$savedCartItem->getProductId()] = $savedCartItem->getQuantity();
+        }
         $session->remove('cart');
-
         return $this->callService(
-            function () use ($cart) {
-                return ['confirmed_purchase' => $cart];
+            function () use ($cartItems) {
+                return ['cart_items' => $cartItems];
             }
         );
     }

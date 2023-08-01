@@ -1,8 +1,6 @@
 <?php
 
-
 namespace CodeChallenge\Tests\Infrastructure\Http\Controller;
-
 
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -29,12 +27,6 @@ class TestBase extends WebTestCase
         $responseText = $this->client->getResponse()->getContent();
 
         $responseContent = json_decode($responseText);
-
-        if ($responseContent == null) {
-            $filename = __DIR__ . "/response.html";
-            echo "\nMalformed response, check it at $filename\n";
-            file_put_contents($filename, $responseText);
-        }
         if ($responseContent->status !== 'ok') {
             var_dump($responseContent);
         }

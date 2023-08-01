@@ -11,7 +11,6 @@ class CartService
 {
     private $cartRepository;
     private $productRepository;
-
     public $confirmedCart = false;
 
     public function __construct(CartRepository $cartRepository, ProductRepository $productRepository)
@@ -31,7 +30,10 @@ class CartService
             }
         }
         $this->confirmedCart = true;
-        //$this->purchaseRepository->add($this->purchase);
-        //return $this->cartRepository->save($cart);
+    }
+
+    public function getCartByShoppingCartId(string $shoppingCartId): array
+    {
+        return $this->cartRepository->findById($shoppingCartId);
     }
 }

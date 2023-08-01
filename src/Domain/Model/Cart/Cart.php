@@ -6,6 +6,7 @@ use CodeChallenge\Domain\Model\Product\Product;
 
 class Cart
 {
+    private int $id;
     private string $shoppingCartId;
     private int $product_id;
     private int $quantity;
@@ -17,6 +18,14 @@ class Cart
         $this->quantity = $quantity;
         $this->shoppingCartId = $shoppingCartId;
         $this->at_price = $product->price();
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     /**

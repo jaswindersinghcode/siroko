@@ -25,4 +25,11 @@ class DoctrineCartRepository extends ServiceEntityRepository implements CartRepo
         $this->getEntityManager()->flush();
     }
 
+    public function findById(string $shoppingCartId): array
+    {
+        $query = $this->entityManager->createQuery(
+            'SELECT c FROM ' . Cart::class . ' c WHERE c.shoppingCartId = :shoppingCartId'
+        )->setParameter('shoppingCartId', $shoppingCartId);
+        return $query->getResult();
+    }
 }

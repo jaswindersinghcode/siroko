@@ -27,7 +27,7 @@ class CartAggregateTest extends TestBase
 
         $this->assertCount(2, $shoppingCart->getItems());
 
-        $shoppingCart->removeProduct($product1);
+        $shoppingCart->deleteProduct($product1);
         $this->assertCount(1, $shoppingCart->getItems());
     }
 

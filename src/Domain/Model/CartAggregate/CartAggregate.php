@@ -34,7 +34,7 @@ class CartAggregate
         $productId = $product->Id();
 
         if ($quantity <= 0) {
-            $this->removeProduct($product);
+            $this->deleteProduct($product);
         } else {
             if (isset($this->items[$productId])) {
                 $this->items[$productId] = $quantity;
@@ -44,7 +44,7 @@ class CartAggregate
         }
     }
 
-    public function removeProduct(Product $product): void
+    public function deleteProduct(Product $product): void
     {
         $productId = $product->Id();
 

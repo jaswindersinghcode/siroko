@@ -3,26 +3,26 @@ index:
     controller: CodeChallenge\Infrastructure\Http\Controller\SiteController::status
 
 products_in_shopping_cart:
-    path: api/count
-    controller: CodeChallenge\Infrastructure\Http\Controller\ShoppingCartController::countProductsInCart
+    path: api/cart/count
+    controller: CodeChallenge\Infrastructure\Http\Controller\CartController::countProductsInCart
     methods: [GET]
 
 add_to_shopping_cart:
     path: api/cart/add
-    controller: CodeChallenge\Infrastructure\Http\Controller\ShoppingCartController::add
+    controller: CodeChallenge\Infrastructure\Http\Controller\CartController::add
     methods: [POST]
 
 update_shopping_cart:
     path: api/cart/update
-    controller: CodeChallenge\Infrastructure\Http\Controller\ShoppingCartController::update
+    controller: CodeChallenge\Infrastructure\Http\Controller\CartController::update
     methods: [PUT]
 
 remove_from_shopping_cart:
     path: api/cart/delete
-    controller: CodeChallenge\Infrastructure\Http\Controller\ShoppingCartController::delete
+    controller: CodeChallenge\Infrastructure\Http\Controller\CartController::delete
     methods: [DELETE]
 
 confirm_purchase:
     path: api/cart/confirm
-    controller: CodeChallenge\Infrastructure\Http\Controller\ShoppingCartController::confirmPurchase
+    controller: CodeChallenge\Infrastructure\Http\Controller\CartController::confirmPurchase
     methods: [POST]
