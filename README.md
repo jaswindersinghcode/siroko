@@ -24,7 +24,7 @@ The API endpoints are as follows:
 
 - URL: http://localhost:2138
 
-* POST /api/cart/add: Add a product to the shopping cart. Send the product ID and quantity as JSON data in the request body.
+* POST /api/cart/add: Add a product to the shopping cart. Send the product ID and quantity as JSON data in the request body. For example. {"productId":"1","quantity":"2"}
 
 * PUT /api/cart/update: Update the quantity of a product in the shopping cart. Send the product ID and new quantity as JSON data in the request body.
 
