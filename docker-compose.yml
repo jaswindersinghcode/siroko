@@ -6,7 +6,7 @@ services:
     build:
       context: etc/dev/mysql
     volumes:
-      - "./dumps/doctorslot.sql:/docker-entrypoint-initdb.d/doctorslot.sql"
+      - "./dumps/siroko.sql:/docker-entrypoint-initdb.d/siroko.sql"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: db

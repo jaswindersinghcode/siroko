@@ -1,17 +1,24 @@
 <?php
 
-namespace CodeChallenge\Domain\Model\ShoppingCart;
+namespace CodeChallenge\Domain\Model\CartAggregate;
 
 use CodeChallenge\Domain\Model\Product\Product;
+use Ramsey\Uuid\Uuid;
 
-class ShoppingCart
+class CartAggregate
 {
+    private string $id;
+
     private array $items = [];
     public function __construct()
     {
+        $this->id = Uuid::uuid4();
         $this->items = [];
     }
 
+    public function id(): string {
+        return $this->id;
+    }
     public function addProduct(Product $product, int $quantity = 1): void
     {
         $productId = $product->Id();
@@ -32,7 +39,6 @@ class ShoppingCart
             if (isset($this->items[$productId])) {
                 $this->items[$productId] = $quantity;
             } else {
-                // Product not in cart, add it with the given quantity
                 $this->items[$productId] = $quantity;
             }
         }
@@ -62,4 +68,5 @@ class ShoppingCart
     {
         return $this->items;
     }
+
 }

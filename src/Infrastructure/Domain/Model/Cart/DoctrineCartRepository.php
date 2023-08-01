@@ -1,16 +1,16 @@
 <?php
 
-namespace CodeChallenge\Infrastructure\Domain\Model\Purchase;
+namespace CodeChallenge\Infrastructure\Domain\Model\Cart;
 
+use CodeChallenge\Domain\Model\Cart\Cart;
+use CodeChallenge\Domain\Model\Cart\CartRepository;
 use CodeChallenge\Domain\Model\Product\Product;
 use CodeChallenge\Domain\Model\Product\ProductRepository;
-use CodeChallenge\Domain\Model\Purchase\Purchase;
-use CodeChallenge\Domain\Model\Purchase\PurchaseRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\EntityManagerInterface;
 
-class DoctrinePurchaseRepository extends ServiceEntityRepository implements PurchaseRepository
+class DoctrineCartRepository extends ServiceEntityRepository implements CartRepository
 {
     private $entityManager;
 
@@ -19,10 +19,10 @@ class DoctrinePurchaseRepository extends ServiceEntityRepository implements Purc
         parent::__construct($registry, Product::class);
         $this->entityManager = $entityManager;
     }
-    public function add(Purchase $purchase): bool
+    public function save(Cart $cart): void
     {
-        $this->getEntityManager()->persist($purchase);
+        $this->getEntityManager()->persist($cart);
         $this->getEntityManager()->flush();
-        return true;
     }
+
 }

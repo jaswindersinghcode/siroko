@@ -19,7 +19,7 @@ clean:
 .PHONY: tests
 tests:
 	docker exec siroko-app ./bin/console cache:clear --env=tests
-	docker exec siroko-app ./vendor/bin/phpunit tests
+	docker exec siroko-app ./vendor/bin/phpunit tests --stderr
 
 .PHONY: testunit
 testunit:

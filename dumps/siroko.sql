@@ -1,6 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
---
--- Host: localhost    Database: CodeChallenge
+-- Host: localhost    Database: Siroko
 -- ------------------------------------------------------
 -- Server version	5.7.21-0ubuntu0.17.10.1
 
@@ -16,7 +14,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `CodeChallenge`
+-- Current Database: `Siroko`
 --
 
 CREATE DATABASE /*!32312 IF NOT EXISTS*/ `Siroko` /*!40100 DEFAULT CHARACTER SET utf8 */;
@@ -31,17 +29,24 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
                            `id` INT AUTO_INCREMENT PRIMARY KEY,
-                           `name` varchar(300) NOT NULL
+                           `name` varchar(300) NOT NULL,
+                           `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `product` (name, price) VALUES ('Camiseta', '59'), ('Pentalon', '40');
+--
+-- Table structure for table `product`
 
 --
 -- Table structure for table `product`
 --
-DROP TABLE IF EXISTS `purchase`;
+DROP TABLE IF EXISTS `cart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `purchase` (
+CREATE TABLE `cart` (
                             `id` INT AUTO_INCREMENT PRIMARY KEY,
-                            `items` varchar(300) NOT NULL,
-                            `created` datetime
+                            `shoppingCartId` varchar(64) NOT NULL,
+                            `product_id` int NOT NULL,
+                            `quantity` int NOT NULL,
+                            `at_price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
